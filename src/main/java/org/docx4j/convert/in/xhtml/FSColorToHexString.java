@@ -2,14 +2,14 @@
  *  This file is part of the docx4j-ImportXHTML library.
  *
  *  Copyright 2011-2013, Plutext Pty Ltd, and contributors.
- *  Portions contributed before 15 July 2013 formed part of docx4j 
+ *  Portions contributed before 15 July 2013 formed part of docx4j
  *  and were contributed under ASL v2 (a copy of which is incorporated
- *  herein by reference and applies to those portions). 
- *   
- *  This library as a whole is licensed under the GNU Lesser General 
- *  Public License as published by the Free Software Foundation; 
+ *  herein by reference and applies to those portions).
+ *
+ *  This library as a whole is licensed under the GNU Lesser General
+ *  Public License as published by the Free Software Foundation;
     version 2.1.
-    
+
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either
@@ -21,9 +21,9 @@
     Lesser General Public License for more details.
 
     You should have received a copy of the GNU Lesser General Public
-    License along with this library (see legals/LICENSE); if not, 
+    License along with this library (see legals/LICENSE); if not,
     see http://www.gnu.org/licenses/lgpl-2.1.html
-    
+
  */
 package org.docx4j.convert.in.xhtml;
 
@@ -34,20 +34,20 @@ import org.docx4j.org.xhtmlrenderer.css.parser.PropertyValue;
 import org.w3c.dom.css.CSSPrimitiveValue;
 
 public class FSColorToHexString {
-	
-	public static String rgbToHex(CSSPrimitiveValue cssPrimitiveValue) {
-		
+
+    public static String rgbToHex(CSSPrimitiveValue cssPrimitiveValue) {
+
         if (!(cssPrimitiveValue instanceof PropertyValue))
             throw new UnsupportedOperationException();
         final FSColor fsColor = ((PropertyValue) cssPrimitiveValue)
-                .getFSColor();
+            .getFSColor();
         if (!(fsColor instanceof FSRGBColor))
             throw new UnsupportedOperationException();
-    
+
         return UnitsOfMeasurement.rgbTripleToHex(
-        		((FSRGBColor) fsColor).getRed(), 
-        		((FSRGBColor) fsColor).getGreen(), 
-        		((FSRGBColor) fsColor).getBlue());		
-	}
+            ((FSRGBColor) fsColor).getRed(),
+            ((FSRGBColor) fsColor).getGreen(),
+            ((FSRGBColor) fsColor).getBlue());
+    }
 
 }
